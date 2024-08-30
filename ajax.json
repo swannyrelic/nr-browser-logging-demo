@@ -1,0 +1,384 @@
+{
+  "searchResults": [
+    {
+      "_id": "66ad012e64e6886e6e0bbf50",
+      "index": 0,
+      "guid": "fba3bb79-fe49-418e-9277-27c4b5fc9821",
+      "product_link": "http://localhost/ajax.json?details_guid=35fbce8f-cdd7-460d-805c-d6d2950ae6c9",
+      "company": "QUORDATE",
+      "product_desc": "Dolore Lorem ut labore aliqua aliquip Lorem non nisi ullamco qui sit. Reprehenderit nisi quis ullamco irure voluptate incididunt sunt. Commodo aliqua ullamco qui aute minim non fugiat enim elit sunt exercitation elit culpa.\r\n",
+      "create_date": "2023-07-29T09:08:49 +04:00",
+      "latitude": -1.206315,
+      "longitude": 154.944884,
+      "tags": [
+        "Lorem",
+        "et",
+        "aliqua",
+        "Lorem",
+        "occaecat",
+        "ipsum",
+        "commodo"
+      ]
+    },
+    {
+      "_id": "66ad012e3962cd351a1b09ee",
+      "index": 1,
+      "guid": "5eaab266-b4fd-45d4-be55-84ce58d526c8",
+      "product_link": "https://localhost/ajax.json?details_guid=76d86d04-9206-495e-ba81-4e85e1b46a6d",
+      "company": "VIASIA",
+      "product_desc": "Qui non proident officia excepteur proident voluptate cillum eu exercitation commodo non ea quis quis. Laboris incididunt aliqua mollit consequat velit veniam exercitation. Aliquip dolor voluptate adipisicing irure. Cupidatat ex consequat non et amet sit amet labore do occaecat ea sit. Ullamco ad in sunt mollit cillum reprehenderit consectetur minim. Labore ea aliqua dolore labore non aliquip deserunt excepteur aute proident.\r\n",
+      "create_date": "2016-01-03T10:06:56 +05:00",
+      "latitude": 86.272524,
+      "longitude": 32.71185,
+      "tags": [
+        "elit",
+        "ex",
+        "culpa",
+        "ad",
+        "sint",
+        "nulla",
+        "consectetur"
+      ]
+    },
+    {
+      "_id": "66ad012e9431ded365ff4bf1",
+      "index": 2,
+      "guid": "b8c30daa-6797-4d17-acad-956b912c9b0c",
+      "product_link": "https://localhost/ajax.json?details_guid=dbe34587-a843-4578-86d6-6b48f2f6931f",
+      "company": "BIOLIVE",
+      "product_desc": "Quis aliqua laboris excepteur amet. Ut nulla amet proident eu ullamco magna aute consequat enim pariatur dolore fugiat consequat. Ea aute consequat fugiat mollit ea pariatur labore ut Lorem commodo dolore cillum. Tempor fugiat minim aliqua do deserunt consequat incididunt consectetur excepteur occaecat. Dolor reprehenderit quis ea fugiat mollit eu cillum sunt adipisicing. Ad amet exercitation excepteur non nulla fugiat aliquip esse ex deserunt esse aliqua est duis.\r\n",
+      "create_date": "2023-11-12T03:58:08 +05:00",
+      "latitude": 52.325572,
+      "longitude": -106.002701,
+      "tags": [
+        "irure",
+        "veniam",
+        "incididunt",
+        "non",
+        "consequat",
+        "aute",
+        "voluptate"
+      ]
+    },
+    {
+      "_id": "66ad012ef61a3adbabcb56e3",
+      "index": 3,
+      "guid": "a64e97b9-97f5-4692-b301-5dfe83783aa5",
+      "product_link": "https://localhost/ajax.json?details_guid=1824bbd6-3e38-45b2-a44c-e19356f5775d",
+      "company": "ORBIFLEX",
+      "product_desc": "Sunt fugiat id velit labore aliquip consectetur cupidatat tempor in id consectetur aute voluptate. Incididunt anim in cillum ullamco cupidatat magna nostrud commodo magna. Id consequat dolore aute labore minim dolor amet mollit elit culpa duis cillum commodo.\r\n",
+      "create_date": "2021-10-03T06:09:36 +04:00",
+      "latitude": -23.737556,
+      "longitude": -8.341687,
+      "tags": [
+        "nostrud",
+        "excepteur",
+        "dolore",
+        "occaecat",
+        "sunt",
+        "quis",
+        "minim"
+      ]
+    },
+    {
+      "_id": "66ad012e4c456d621a9fd711",
+      "index": 4,
+      "guid": "d308909d-8eb4-446c-b831-6333d6ae858d",
+      "product_link": "https://localhost/ajax.json?details_guid=a48081f7-b175-4075-bf50-e5aaea8dc6ed",
+      "company": "KNEEDLES",
+      "product_desc": "Amet Lorem qui voluptate ipsum minim fugiat ullamco magna voluptate anim quis voluptate mollit sit. Adipisicing deserunt sunt velit exercitation ea magna adipisicing mollit veniam amet duis. Ex voluptate voluptate sit consectetur. Id magna commodo eiusmod deserunt. Ea minim officia dolore quis dolor. Anim ullamco eiusmod sit irure excepteur laborum cillum exercitation adipisicing quis laboris nisi exercitation.\r\n",
+      "create_date": "2023-11-05T12:40:47 +04:00",
+      "latitude": 86.473547,
+      "longitude": -55.747149,
+      "tags": [
+        "in",
+        "Lorem",
+        "mollit",
+        "qui",
+        "ut",
+        "ex",
+        "Lorem"
+      ]
+    },
+    {
+      "_id": "66ad012eb73bf1f57edc2bdc",
+      "index": 5,
+      "guid": "3d6a0e36-a0d9-48b1-96d0-7e32d7c06b58",
+      "product_link": "https://localhost/ajax.json?details_guid=360aa411-2c7e-4a8e-b227-52cf885fc433",
+      "company": "ISOPLEX",
+      "product_desc": "Dolor mollit ad labore officia anim consectetur fugiat Lorem voluptate mollit excepteur aute. Nostrud sint nostrud laboris laborum magna. Est esse exercitation ea non Lorem deserunt elit adipisicing. Ullamco dolor tempor dolore sit in ullamco ullamco ullamco ipsum occaecat dolor. Fugiat ex aliquip nostrud ad. Nostrud est in commodo ea exercitation culpa esse. Laborum qui amet excepteur deserunt Lorem est voluptate officia anim.\r\n",
+      "create_date": "2023-02-19T01:59:22 +05:00",
+      "latitude": -52.287006,
+      "longitude": -154.104755,
+      "tags": [
+        "minim",
+        "ad",
+        "laborum",
+        "nisi",
+        "enim",
+        "dolor",
+        "sint"
+      ]
+    },
+    {
+      "_id": "66ad012edb150111a6b04aa7",
+      "index": 6,
+      "guid": "86ebd12d-a5ff-4577-a26b-2d86ddd6125c",
+      "product_link": "https://localhost/ajax.json?details_guid=892fb75c-3a25-46ff-8b3f-62796787323a",
+      "company": "ANACHO",
+      "product_desc": "Pariatur veniam esse ut exercitation consectetur ipsum Lorem deserunt est. Cillum irure non adipisicing cupidatat commodo voluptate sunt excepteur consectetur consequat non sint deserunt fugiat. Irure duis sint reprehenderit aliqua minim pariatur ullamco aute in tempor adipisicing do mollit pariatur. Sit laborum labore consequat sunt amet do sit minim quis culpa adipisicing nisi. Veniam consequat dolor id consequat labore Lorem tempor id excepteur duis aliqua. Commodo duis sunt reprehenderit laboris eu nulla enim. Incididunt anim ad labore fugiat.\r\n",
+      "create_date": "2021-06-01T01:05:52 +04:00",
+      "latitude": -64.720441,
+      "longitude": -58.789955,
+      "tags": [
+        "est",
+        "incididunt",
+        "adipisicing",
+        "pariatur",
+        "culpa",
+        "aliqua",
+        "quis"
+      ]
+    },
+    {
+      "_id": "66ad012ea91e2fa215d43153",
+      "index": 7,
+      "guid": "2e58d729-95d3-429f-9093-a07f5a88a1eb",
+      "product_link": "https://localhost/ajax.json?details_guid=52e19d22-0f5e-491c-bcb4-9d85e4370394",
+      "company": "HOPELI",
+      "product_desc": "Cupidatat irure fugiat incididunt est culpa enim do aliquip. Culpa Lorem aliqua aliquip in aute adipisicing laborum sunt consectetur officia nulla. Ipsum aliqua excepteur est incididunt reprehenderit aute mollit.\r\n",
+      "create_date": "2015-06-23T09:35:48 +04:00",
+      "latitude": -44.151698,
+      "longitude": -22.403975,
+      "tags": [
+        "consectetur",
+        "elit",
+        "nisi",
+        "nulla",
+        "veniam",
+        "adipisicing",
+        "sint"
+      ]
+    },
+    {
+      "_id": "66ad012ec06a9f6cef7459d7",
+      "index": 8,
+      "guid": "e62208fa-368e-4d44-b260-ffa36a2eeb70",
+      "product_link": "https://localhost/ajax.json?details_guid=c328b4f1-7ca5-41fc-b221-27ceff846e6e",
+      "company": "OHMNET",
+      "product_desc": "Irure eiusmod aliqua magna et sunt sunt ea esse ad in id. Sit cupidatat adipisicing cupidatat in sit ullamco consequat labore aliquip nisi cillum nulla. Eiusmod aute ea aliqua ea et minim anim in et exercitation culpa proident nisi. Duis quis consectetur velit amet proident. Ut Lorem consequat do quis sit labore veniam commodo non labore. Et adipisicing aliqua incididunt in laborum amet dolore excepteur deserunt cupidatat.\r\n",
+      "create_date": "2016-04-26T04:09:06 +04:00",
+      "latitude": -77.629437,
+      "longitude": -0.700021,
+      "tags": [
+        "ipsum",
+        "pariatur",
+        "amet",
+        "duis",
+        "ex",
+        "exercitation",
+        "do"
+      ]
+    },
+    {
+      "_id": "66ad012ecfacfe0ac93cff35",
+      "index": 9,
+      "guid": "dc920f76-b967-46df-8e64-16843cea600b",
+      "product_link": "https://localhost/ajax.json?details_guid=5587314e-9a17-474b-a3f9-b879d95a81c4",
+      "company": "MEDESIGN",
+      "product_desc": "Labore esse eu dolore reprehenderit qui do. Nulla commodo labore occaecat Lorem et sint consectetur consectetur. Ullamco enim tempor elit elit eu anim. Aliquip nostrud aliquip qui reprehenderit. Veniam irure ipsum tempor consequat anim reprehenderit Lorem voluptate ex nisi nisi. Duis sint minim non duis officia pariatur exercitation cupidatat nisi Lorem. Est cillum excepteur nostrud ullamco commodo.\r\n",
+      "create_date": "2023-04-07T01:23:40 +04:00",
+      "latitude": -26.774936,
+      "longitude": -164.783092,
+      "tags": [
+        "cillum",
+        "irure",
+        "Lorem",
+        "labore",
+        "dolore",
+        "in",
+        "sunt"
+      ]
+    },
+    {
+      "_id": "66ad012eb34514489b3bb865",
+      "index": 10,
+      "guid": "c6e37bf0-73d0-492a-a8f1-4b0ccaedd28c",
+      "product_link": "https://localhost/ajax.json?details_guid=0a923c92-4082-4fff-9237-ae02a8b68b6c",
+      "company": "WAAB",
+      "product_desc": "Pariatur amet cupidatat minim voluptate ipsum qui commodo nulla. Qui et enim ad culpa qui est laboris commodo nulla veniam ipsum. Laborum in et aliqua magna eu officia do Lorem enim. Duis aute officia incididunt aliquip do.\r\n",
+      "create_date": "2015-05-29T12:19:03 +04:00",
+      "latitude": -1.112572,
+      "longitude": -31.350895,
+      "tags": [
+        "ipsum",
+        "incididunt",
+        "non",
+        "cillum",
+        "esse",
+        "veniam",
+        "non"
+      ]
+    },
+    {
+      "_id": "66ad012e9a11eb5d3600048a",
+      "index": 11,
+      "guid": "3761405a-7b8d-4b8b-a2f0-3004bdfb5e4f",
+      "product_link": "https://localhost/ajax.json?details_guid=e51c705a-29c8-4aa3-9406-ec448a4bbce8",
+      "company": "METROZ",
+      "product_desc": "Do aliquip laborum officia cillum commodo mollit laborum deserunt excepteur do veniam ipsum qui. Cupidatat nisi ut esse nulla irure qui laboris ad aliqua laborum irure do consectetur ea. Ex labore ut quis minim duis consectetur veniam. Tempor culpa ex amet irure consequat quis exercitation ipsum est ipsum velit. Nostrud veniam occaecat sunt velit quis cupidatat consequat deserunt labore labore laboris Lorem. Officia nulla ex do nisi laboris velit tempor ea cillum velit. Est qui commodo enim exercitation ullamco qui et ea eiusmod.\r\n",
+      "create_date": "2016-11-18T08:41:47 +05:00",
+      "latitude": -2.550794,
+      "longitude": 124.212193,
+      "tags": [
+        "sunt",
+        "est",
+        "occaecat",
+        "enim",
+        "qui",
+        "id",
+        "enim"
+      ]
+    },
+    {
+      "_id": "66ad012eb54241dbc753d137",
+      "index": 12,
+      "guid": "b8b49712-2c93-4bdc-af13-886c50e6bee4",
+      "product_link": "https://localhost/ajax.json?details_guid=15860132-d67b-4f58-84d6-869bd0b2d95f",
+      "company": "CENTREE",
+      "product_desc": "Exercitation do officia consectetur proident. In laboris sunt excepteur proident velit laboris voluptate reprehenderit eu exercitation ex veniam. Ut nisi laborum duis anim ipsum tempor aliquip amet ipsum minim proident cupidatat Lorem qui. Nisi magna do aliquip laborum labore sunt sunt in pariatur reprehenderit consequat labore excepteur.\r\n",
+      "create_date": "2022-07-01T06:17:05 +04:00",
+      "latitude": 78.61978,
+      "longitude": -155.224965,
+      "tags": [
+        "incididunt",
+        "pariatur",
+        "eiusmod",
+        "in",
+        "non",
+        "excepteur",
+        "fugiat"
+      ]
+    },
+    {
+      "_id": "66ad012e795cb715189d8061",
+      "index": 13,
+      "guid": "abd70d92-2da2-4ae4-a9c3-d8dd5a44a1c8",
+      "product_link": "https://localhost/ajax.json?details_guid=258be1f4-a5a7-43f9-b26d-f3493ba01a54",
+      "company": "DOGSPA",
+      "product_desc": "Enim deserunt voluptate laboris aute cillum elit quis officia ullamco nisi nulla. Ad exercitation aliquip ex non sint consectetur est sit et duis dolor. Incididunt et ea exercitation dolore ea ipsum amet culpa fugiat cillum do reprehenderit commodo enim. Amet sint anim id id tempor aliquip. Nulla enim magna nulla Lorem sint duis excepteur qui.\r\n",
+      "create_date": "2024-06-21T09:43:01 +04:00",
+      "latitude": 50.385317,
+      "longitude": -6.130747,
+      "tags": [
+        "cupidatat",
+        "duis",
+        "laborum",
+        "eu",
+        "quis",
+        "nisi",
+        "esse"
+      ]
+    },
+    {
+      "_id": "66ad012e90d5cbf95f8b1614",
+      "index": 14,
+      "guid": "b6993b36-ba1e-4502-a7c3-ec5f3a61ccdc",
+      "product_link": "https://localhost/ajax.json?details_guid=42a9be8c-05a2-4565-a716-f9dc34c0d4b1",
+      "company": "CRUSTATIA",
+      "product_desc": "Nulla et non et magna mollit ex reprehenderit velit aliquip elit consequat deserunt. Enim ut aute amet duis fugiat cillum in nulla ut incididunt labore Lorem dolore. Irure officia voluptate cillum proident sunt sunt sint consectetur sit eu irure eu. Nisi consectetur pariatur est sit eu magna ea quis pariatur.\r\n",
+      "create_date": "2014-10-07T10:37:39 +04:00",
+      "latitude": 37.637387,
+      "longitude": -141.630605,
+      "tags": [
+        "elit",
+        "ullamco",
+        "labore",
+        "in",
+        "ut",
+        "do",
+        "ea"
+      ]
+    },
+    {
+      "_id": "66ad012ef58f7501a2eeac9a",
+      "index": 15,
+      "guid": "475c31c7-7126-43ea-b1c4-43647ae27221",
+      "product_link": "https://localhost/ajax.json?details_guid=52252fe0-7ef5-49de-b4dc-6c2269cdf4a0",
+      "company": "BEZAL",
+      "product_desc": "Do in sunt pariatur amet et velit laborum. Fugiat ad commodo sint cupidatat enim. Dolor officia eu non ea.\r\n",
+      "create_date": "2014-03-25T12:41:44 +04:00",
+      "latitude": 28.534495,
+      "longitude": -78.342524,
+      "tags": [
+        "tempor",
+        "anim",
+        "culpa",
+        "est",
+        "ipsum",
+        "sint",
+        "consectetur"
+      ]
+    },
+    {
+      "_id": "66ad012e144a67ec2aa57c07",
+      "index": 16,
+      "guid": "6d28fb93-63d6-4354-ae41-1e94b8ce9fa4",
+      "product_link": "https://localhost/ajax.json?details_guid=8dd2d1da-8b5d-4765-8c89-e9770258c14f",
+      "company": "POSHOME",
+      "product_desc": "Adipisicing do est ullamco amet velit aliqua. Ut ad nisi anim ullamco deserunt. Nostrud velit esse reprehenderit sit laborum do eu enim velit.\r\n",
+      "create_date": "2022-12-05T04:34:08 +05:00",
+      "latitude": 46.320512,
+      "longitude": 73.737172,
+      "tags": [
+        "ad",
+        "fugiat",
+        "sint",
+        "id",
+        "ad",
+        "nostrud",
+        "esse"
+      ]
+    },
+    {
+      "_id": "66ad012eb191ea42727026da",
+      "index": 17,
+      "guid": "889f444e-89b9-4211-aa8b-0c6fc1b4d083",
+      "product_link": "https://localhost/ajax.json?details_guid=c2c3c34b-738d-4c27-bba5-3e2f7fe2d3a8",
+      "company": "ZINCA",
+      "product_desc": "Eiusmod nisi sint eu dolor mollit veniam esse pariatur deserunt incididunt nostrud cillum ea Lorem. Eu veniam consequat mollit consectetur est pariatur. Sint do velit anim nisi laboris commodo sit ad ea dolor proident velit.\r\n",
+      "create_date": "2016-10-10T12:54:56 +04:00",
+      "latitude": -36.129439,
+      "longitude": 1.868989,
+      "tags": [
+        "dolor",
+        "mollit",
+        "dolor",
+        "ea",
+        "deserunt",
+        "mollit",
+        "do"
+      ]
+    },
+    {
+      "_id": "66ad012eceff1a3ea55c4aef",
+      "index": 18,
+      "guid": "1c79a1e7-0412-4280-aab1-f171ccde947b",
+      "product_link": "https://localhost/ajax.json?details_guid=255908e6-aa3c-48cf-960f-18bb333d3501",
+      "company": "MEGALL",
+      "product_desc": "Proident amet Lorem fugiat pariatur aute aute elit irure deserunt. Nostrud veniam ut velit aliquip est. Sit pariatur esse esse eiusmod dolor enim. Deserunt occaecat qui tempor excepteur ad officia voluptate ipsum ut ea. Elit excepteur pariatur eiusmod id eiusmod laboris. Fugiat dolor dolore eu consequat incididunt. Quis ad ex esse qui commodo.\r\n",
+      "create_date": "2024-01-11T07:06:39 +05:00",
+      "latitude": -54.835428,
+      "longitude": 53.184917,
+      "tags": [
+        "magna",
+        "cillum",
+        "culpa",
+        "culpa",
+        "officia",
+        "non",
+        "duis"
+      ]
+    }
+  ]
+}

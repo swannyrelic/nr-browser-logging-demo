@@ -1,0 +1,507 @@
+<html>
+	<title>New Relic Browser Agent - Logging Demo</title>
+<head>
+
+<script>
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	//
+	//	Description: Browser Agent Logging Demo - 8.2024
+	//	Author: mswanson@newrelic.com
+	//  GitHub: https://github.com/swannyrelic/nr-browser-logging-demo
+	//	
+	//	Demo Capabilities: Native Error collection, noticeError() collection, Console Log collection, .log() collection
+	//
+	//	tl;dr
+	//	Step 1 - Replace the NR JS Snippet with your own for your demo application
+	//  Step 2 - Take a screenshot of the customer's header logo from their site; possibly a search results page (if they have one) and save as 'header-min.png' in the demo folder
+	//	Step 3 - Adjust the config options for the product details, pricing, description, etc in the section labeled "local config options" below
+	//	
+	//	Note: You will need to run this index.html file from localhost or a web server... running the html in your browser via file:// directly *might* result in CORS errors
+	//
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+</script>
+
+
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--include jQuery-->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+	<!--
+	////////////////////////////////////////////////////////////////
+	//
+	//	Step 1 - Insert your NR Browser Agent Script from your demo account (copy/paste method)
+	//
+	////////////////////////////////////////////////////////////////
+	-->
+	
+
+</head>
+
+<script>
+
+
+	////////////////////////////////////////////////////////////////
+	//
+	// Step 2 - Customer Branding (png) for header
+	//
+
+	let config_logo = 'header-min.png';  //Step 2 - demo branding - note: can be a local file or an image URL (~1200x400 works well)
+
+	//	set the header logo
+	$(document).ready(function() {
+		$("#header_logo").append('<img style="width:100%" src="'+config_logo+'">');
+	});
+
+	//
+	//	END Step 2
+	//
+	////////////////////////////////////////////////////////////////
+
+
+	////////////////////////////////////////////////////////////////
+	//
+	// Step 3 - local config options
+	//
+
+	let ca_prefix = 'ca_';  //used as prefix for custom all attributes so that they will be grouped together and easily identifiable in the browser telemetry
+	
+	//	set the json example file
+	let config_json_file = "ajax.json"; //json file used locally to get via ajax and .log() the json results from the ajax request
+	
+	//	user attributes - setting these to decorate the telemetry with custom attributes
+	let ca_username = 'YOUR_USERNAME'; //example user name
+	let ca_userid = 'USER_ID'; //example user id
+	let ca_ip_address = '127.0.0.1'; //example ip address
+	let ca_referer_source = 'REFERER_SOURCE'; //example traffic source - GOOGLE_SE (Google - Search Engine - Organic)
+
+	//	custom settings for a customer environment - these can be used so that we will have some simulated customer data in the demo
+	let config_ca_domain = 'frontend.demogorgon-prod.com'; //example customer domain
+	let config_ca_item_desciption = 'Watch: Gold-tone stainless steel watch; perfect for any executive'; //ecom item name
+	let config_ca_item_price = '109.99'; //ecom item price
+	
+	//	custom settings for the cart and checkout action(s) to .log()
+	let config_ca_item_sku = '1YMWWN1N4O'; //ecom SKU
+	let config_ca_cart_total = '124.58'; //ecom cart total
+	let config_ca_card_type = 'VISA'; //ecom card type
+	let config_ca_level_info = 'info'; //ecom info log level
+	let config_ca_level_error = 'error'; //ecom error log level
+	let config_ca_keyword = 'Watch'; //used in the search result attribute for a search term
+	let config_ca_results_found = '25'; //number of search results found
+	let config_ca_failed_method = 'Add to Cart Failed'; //used in noticeError example #2
+
+	//	Note: The labels below do not need to be changed, unless you'd like to modify the demo
+	//	The config labels below are used in each of the examples in this demo, so that we can encapsulate the label names and not have to repeat them in each example
+	let config_varname_ca_item = 'item';
+	let config_varname_ca_item_price = 'item_price';
+	let config_varname_ca_page_type = 'page_type';
+	let config_varname_ca_item_sku = 'item_sku';
+	let config_varname_ca_function_name = 'function_name';
+	let config_varname_ca_domain = 'domain';
+	let config_varname_ca_cart_total = 'cart_total';
+	let config_varname_ca_card_type = 'card_type';
+	let config_varname_ca_sessionid = 'sessionid';
+	let config_varname_ca_keyword = 'keyword';
+	let config_varname_ca_results_found = 'results_found';
+	let config_varname_ca_user = 'user';
+	let config_varname_ca_userid = 'userid';
+	let config_varname_ca_ip_address = 'ip_address';
+	let config_varname_ca_referer_source = 'referer_source';
+
+
+	//
+	//	END Step 3
+	//
+	////////////////////////////////////////////////////////////////
+
+
+	////////////////////////////////////////////////////////////////
+	//
+	// Optional configuration options - note: these don't require changes for the demo unless you'd like to customize the demo
+	//
+	////////////////////////////////////////////////////////////////
+	
+
+	////////////////////////////////////////////////////////////////
+	// 	Page Analytics Demo Config Options
+	//	Note: The settings below do not need to be changed, unless you'd like to modify the demo
+	//  Description: 
+	//		1. The settings below will be used to capture some two page view action(s): search result, product details for a user. This simulates the user viewing a search result page and product details page and logging the result of the page view to the Log Event Type. The NR browser agent captures page views natively in the PageView event type, but this is an example of how one might log the page view into the Log event type. 
+	//  	2. When this index.html page loads, we'll iterate over two page load types: search results and product details. Each will loop according to the *_max_actions setting below. Defaulting to 5 search results page views to log and 2 product details page views to log.
+	//
+
+	let text_sr = ""; //text result from search result view(s) to be passed to the local logger UI
+	let text_pd = ""; //text result from product detail view(s) to be passed to the local logger UI
+	let config_session_id = makeid(10); //generate a simulated session ID for the user doing the search and product details views
+	let config_i_sr_max_actions = 5; //log X number search result(s) view(s)
+	let config_i_pd_max_actions = 2; //log X number product detail(s) view(s)
+
+	//messages for the Page Analytics section, these are messages used in the demo
+	let config_page_action_search_desc = "PageView: search result view captured";
+	let config_page_action_details_desc = "PageView: product details view captured";
+	
+	//
+	//	END Page Analytics Demo
+	////////////////////////////////
+
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	//
+	//	Note: Shouldn't need to modify any of the below JS code unless you want to change the capability for the demo
+	//
+
+	//	define the keys for each custom attributes as vars
+	let ca_key_item = ca_prefix+config_varname_ca_item;
+	let ca_key_item_price = ca_prefix+config_varname_ca_item_price;
+	let ca_key_item_sku = ca_prefix+config_varname_ca_item_sku;
+	let ca_key_function_name = ca_prefix+config_varname_ca_function_name;
+	let ca_key_domain = ca_prefix+config_varname_ca_domain;
+	let ca_key_page_type = ca_prefix+config_varname_ca_page_type;
+	let ca_key_cart_total = ca_prefix+config_varname_ca_cart_total;
+	let ca_key_card_type = ca_prefix+config_varname_ca_card_type;
+	let ca_key_sessionid = ca_prefix+config_varname_ca_sessionid;
+	let ca_key_keyword = ca_prefix+config_varname_ca_keyword;
+	let ca_key_results_found = ca_prefix+config_varname_ca_results_found;
+	let ca_key_username = ca_prefix+config_varname_ca_user;
+	let ca_key_userid = ca_prefix+config_varname_ca_userid;
+	let ca_key_ip_address = ca_prefix+config_varname_ca_ip_address;
+	let ca_key_referer_source = ca_prefix+config_varname_ca_referer_source;
+	
+	//set custom attribute(s)
+	newrelic.setCustomAttribute(ca_key_username, ca_username);
+	newrelic.setCustomAttribute(ca_key_ip_address, ca_ip_address);
+	newrelic.setCustomAttribute(ca_key_referer_source, ca_referer_source);
+	newrelic.setCustomAttribute(ca_key_sessionid, config_session_id);
+		
+	//set the user id as a custom attribute but also using the setUserId() method
+	newrelic.setCustomAttribute(ca_key_userid, ca_userid);
+	newrelic.setUserId(ca_userid); //set the user id according the docs: https://docs.newrelic.com/docs/browser/new-relic-browser/browser-apis/setuserid/#marking-an-end-users-start-of-session
+	
+	//
+	//	END key prefixes and custom attributes section
+	////////////////////////////////////////////////////////////////
+		
+
+	////////////////////////////////////////////////////////////////
+	//
+	//	Example #1 - Capture custom JS function calls
+	//
+
+	function capture_add_to_cart(){
+		//capture custom function call via .log() via the Browser API with customer attributes (surfaced in the Logs UI in New Relic)
+		newrelic.log('Customer Added Item to Cart', {level: config_ca_level_info, customAttributes: {[ca_key_sessionid]: config_session_id,[ca_key_item]: config_ca_item_desciption,[ca_key_item_price]:config_ca_item_price,[ca_key_item_sku]:config_ca_item_sku,[ca_key_function_name]:arguments.callee.name,[ca_key_domain]:config_ca_domain,[ca_key_page_type]:'cart'}});
+		//log the response in the logger_box
+	    var logger_box = $("#logger");
+		local_logger(config_ca_level_info, logger_box, 'SUCCESS: Captured javascript function to log: '+arguments.callee.name+'()');
+	}
+	function capture_process_card(message_level){
+		//capture user interactions via .log() via the Browser API (surfaced in the Logs UI in New Relic)
+		message_function_status = (config_ca_level_info === message_level) ? "Success" : "Failed";
+		newrelic.log('Customer Card Processed ['+message_function_status+']', {level: message_level, customAttributes: {[ca_key_sessionid]: config_session_id,[ca_key_item]: config_ca_item_desciption,[ca_key_item_price]:config_ca_item_price,[ca_key_cart_total]:config_ca_cart_total,[ca_key_card_type]:config_ca_card_type,[ca_key_item_sku]:config_ca_item_sku,[ca_key_function_name]: arguments.callee.name,[ca_key_domain]:config_ca_domain,[ca_key_page_type]:'cart'}});
+		//log the response in the logger_box
+	    var logger_box = $("#logger");
+		local_logger(message_level.toUpperCase(), logger_box, 'Process Card '+message_function_status.toUpperCase()+': Captured javascript function to log: '+arguments.callee.name+'('+message_function_status.toUpperCase()+')');
+	}
+		
+	//
+	//	END Example #1
+	////////////////////////////////////////////////////////////////
+	
+	
+	////////////////////////////////////////////////////////////////
+	//
+	//	Example #2 - Capture native JS Error
+	//
+
+	function divide_Numbers(n1, n2) {
+	  if (n2 === 0) {
+	  	var logger_box = $("#logger");
+	    local_logger(config_ca_level_error, logger_box, 'Capturing native JS Error: Division by zero is not allowed.');
+	   	throw new Error('Error: Division by zero is not allowed.');
+ 	  }
+	  return n1 / n2;
+	}
+
+	//
+	//	END Example #2
+	////////////////////////////////////////////////////////////////
+	
+	////////////////////////////////////////////////////////////////
+	//
+	//	Example #3 - Capture Error via noticeError()
+	//
+
+	function capture_native_error(){
+		//capture errors via Notice Error (surfaced in the Errors Inbox in New Relic)
+		var error_native = 'noticeError() - '+config_ca_failed_method+' - letting NR know explicitly via noticeError()';
+		var err = new Error(error_native);
+		newrelic.noticeError(err, {level: config_ca_level_error, customAttributes: {[ca_key_sessionid]: config_session_id,[ca_key_item]: config_ca_item_desciption,[ca_key_item_price]:config_ca_item_price,[ca_key_item_sku]:config_ca_item_sku,[ca_key_function_name]:arguments.callee.name,[ca_key_domain]:config_ca_domain}});
+		//log the response in the logger_box
+	    var logger_box = $("#logger");
+		local_logger(config_ca_level_error, logger_box, error_native);
+	   	
+	}
+
+	//
+	//	END Example #3
+	////////////////////////////////////////////////////////////////
+		
+	////////////////////////////////////////////////////////////////
+	//
+	//	Example 4 - Capture logs via wrapLogger()
+	//
+
+	//	Invoke the console.info logger in NR so that subsequent calls to the console.info get captured as logs in New Relic
+	newrelic.wrapLogger(console, 'info', {customAttributes: {[ca_key_item]: config_ca_item_desciption,[ca_key_item_price]:config_ca_item_price,[ca_key_item_sku]:config_ca_item_sku,[ca_key_domain]:config_ca_domain,[ca_key_page_type]:'product_details'}});
+	
+	function invoke_console_log(){
+		//write an info log
+		var info_log_message_to_write = 'Product Page Loaded (console logger init ['+Date.now()+']) ('+config_ca_item_desciption+' - item_sku: '+config_ca_item_sku+' - sessionid: '+config_session_id+')';
+		console.info(info_log_message_to_write);
+ 		var logger_box = $("#logger");
+		local_logger(config_ca_level_info, logger_box, 'Message written to console.info log ['+info_log_message_to_write+'] View console in this browser to see info message; view the Log event type in New Relic to see the console log written');
+	}
+
+	//
+	//	END Example #4
+	////////////////////////////////////////////////////////////////
+	
+
+	////////////////////////////////////////////////////////////////
+	//
+	//	Example 5 - Page analytics - Capture page view actions via .log()
+	//	Page View Logging; capture a couple types of page views (search/product details in this example)
+	//
+
+	function analytics_capture_search_result(){
+		//capture user interactions via .log() via the Browser API (surfaced in the Logs UI in New Relic)
+		newrelic.log('Search Result View', {level: config_ca_level_info, customAttributes: {[ca_key_sessionid]: config_session_id,[ca_key_page_type]:'search_result',[ca_key_keyword]: config_ca_keyword,[ca_key_results_found]:config_ca_results_found,[ca_key_function_name]:arguments.callee.name,[ca_key_domain]:config_ca_domain}});
+	}
+
+	function analytics_capture_product_details(){
+		//capture user interactions via .log() via the Browser API (surfaced in the Logs UI in New Relic)
+		newrelic.log('Product Details View', {level: config_ca_level_info, customAttributes: {[ca_key_sessionid]: config_session_id,[ca_key_page_type]:'product_details',[ca_key_item_sku]: config_ca_item_sku,[ca_key_item_price]:config_ca_item_price,[ca_key_function_name]:arguments.callee.name,[ca_key_domain]:config_ca_domain}});
+	}
+	
+	//
+	//	END Example #5
+	////////////////////////////////////////////////////////////////
+	
+
+	////////////////////////////////////////////////////////////////
+	//	Page Analytics Demo 
+	//	
+	//	Note: these page actions run on *each* page load of this html page and then loop to create the log events to emit to NR via the browser agent
+	//	1. search result viewed, loop x times based on the config setting: config_i_sr_max_actions int 
+	//	2. product details viewed, loop x times based on the config setting: config_i_pd_max_actions int 
+	
+	//
+
+	let i_sr = 0;
+	for (i_sr = 0; i_sr < config_i_sr_max_actions; i_sr++) {
+		analytics_capture_search_result();
+	}
+	text_sr = config_page_action_search_desc+" for [" + i_sr + "] simulated page view(s) for user session: ["+config_session_id+"]";
+
+	//2. product details viewed, loop x times based on the config setting: config_i_pd_max_actions number 
+	let i_pd = 0;
+	for (i_pd = 0; i_pd < config_i_pd_max_actions; i_pd++) {
+		analytics_capture_product_details();
+	}
+	text_pd = config_page_action_details_desc+" for [" + i_pd + "] simulated page view(s) for user session: ["+config_session_id+"]";
+
+	//set the text of the result from the Site/Page Analytics calls above
+	$(document).ready(function() {
+	    //log to the logger box inline (textarea)
+	    var logger_box = $("#logger");
+	    local_logger(config_ca_level_info, logger_box, text_sr);
+	    local_logger(config_ca_level_info, logger_box, text_pd);
+	});
+	
+	//
+	//	END Page Analytics Demo 
+	////////////////////////////////////////////////////////////////
+	
+	////////////////////////////////////////////////////////////////
+	//helper functions
+	//
+	//let this capture logs and then locally show what this page is doing so the user of this demo can see feedback on the page.
+	function local_logger(log_type, logger, text_to_log){
+		new_log = log_type.toUpperCase() + "    "+Date.now()+"	"+text_to_log;
+		//logger.val(logger.val() + new_log+'\n'); //log the new log at the end of the textarea
+		logger.val(new_log+'\n'+logger.val()); //log the new log at the start of the textarea
+		//scroll to the top of the local logger in the UI
+		var $local_logger_id = $('#logger');
+	    	$local_logger_id.scrollTop(0);
+		}
+
+	//clear the local logger text
+	function local_logger_clear(){
+		$('#logger').val("");
+	}
+
+
+	//generic ID function to generate a simulated session id
+	function makeid(length) {
+	    let result = '';
+	    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+	    const charactersLength = characters.length;
+	    let counter = 0;
+	    while (counter < length) {
+	      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+	      counter += 1;
+	    }
+	    return result;
+	}
+
+	//simple ajax call to capture ajax request
+	function loadDoc() {
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	    	//log the response in the logger_box
+	    	var logger_box = $("#logger");
+	    	response_message = config_ca_level_info.toUpperCase() + "    "+Date.now()+"	Ajax call Result: "+this.responseText.trim();;
+	    	
+	    	newrelic.setCustomAttribute('query_param_first_name', 'matt');
+
+	    	local_logger(config_ca_level_info, logger_box, response_message);
+			
+			//make an explicit log() call for the ajax result
+	    	newrelic.log(this.responseText.trim(), {level: config_ca_level_info, customAttributes: {[ca_key_sessionid]: config_session_id,[ca_key_page_type]:'search_result',[ca_key_keyword]: config_ca_keyword,[ca_key_results_found]:config_ca_results_found,[ca_key_function_name]:arguments.callee.name,[ca_key_domain]:config_ca_domain}});
+
+	    }
+	  };
+	  xhttp.open("GET", config_json_file, true); //sample ajax call to the json defined in config_json_file in the local config settings
+	  xhttp.send();
+	}
+
+	//
+	//	END helper functions
+	////////////////////////////////////////////////////////////////
+	
+
+
+</script>
+
+<body>
+
+	<div id=header_logo></div>
+	<div class="container-fluid" style="width: 90%;padding-left: 25px;padding-right: 10px;">
+		<!--wrapper_container-->
+		<div class="container-fluid">
+
+			 <div class="row">
+		        <div class="col-lg-12">
+					<h3 style="font-family: arial;"><img style="width:150px;" src="https://newrelic.com/themes/custom/erno/assets/mediakit/new_relic_logo_horizontal.png"><br><br><strong>Browser Agent Logging and Error Capture Demo</strong> - (<a target=_blank href="https://docs.newrelic.com/docs/browser/new-relic-browser/browser-apis/log/">Logging API Docs</a> | <a target=_blank href="https://docs.newrelic.com/docs/browser/new-relic-browser/browser-apis/noticeerror/">noticeError() Docs</a>)</h3><p>
+					</center><br>
+				</div>
+			</div>
+			 <div class="row">
+		        <div class="col-lg-3">
+		        	<!--demo buttons-->
+		        	<!--Example #1-->
+					<div class="container-fluid" style="padding:5px 5px 15px 25px;background-color:#f1f1f1;">
+						<div class="row" style="padding-bottom: 20px;">
+							<div class="col-md" style="text-align: left;"><h5>Example #1</h5>
+							Emit log from <b>JS function</b> (<a href="https://docs.newrelic.com/docs/logs/ui-data/use-logs-ui/" target=_blank>logs UI</a>)</div>
+						</div>
+						<div class="row">
+							<div class="col-md"><button style="width:175px;" class="btn btn-primary" onclick="capture_add_to_cart();">Add to Cart (Success)</button></div>
+						</div>
+						<div class="row">
+							<div class="col-md">&nbsp;</div>
+						</div>
+						<div class="row">
+							<div class="col-md"><button style="width:175px;" class="btn btn-primary" onclick="capture_process_card(config_ca_level_info);">Process Card (Success)</button></div>
+						</div>
+						<div class="row">
+							<div class="col-md">&nbsp;</div>
+						</div>
+						<div class="row">
+							<div class="col-md"><button style="width:175px;" class="btn btn-primary" onclick="capture_process_card(config_ca_level_error);">Process Card (Failed)</button></div>
+						</div>
+
+					</div>
+					<!--end Example #1-->
+					<p></p>
+					<!--Example #2-->
+					<div class="container-fluid" style="padding:5px 5px 15px 25px;background-color:#ffffff;">
+						<div class="row" style="padding-bottom: 20px;">
+							<div class="col-md" style="text-align: left;"><h5>Example #2</h5>
+							Emit native JS error - view in <a href="https://docs.newrelic.com/docs/errors-inbox/browser-tab/" target=_blank>Errors Inbox</a></div>
+						</div>
+						<div class="row">
+							<div class="col-md"><button  style="width:175px;" class="btn btn-primary" onclick="divide_Numbers(5, 0);">Division by Zero</button></div>
+						</div>
+					</div>
+					<!--end Example #2-->
+					<p></p>
+					<!--Example #3-->
+					<div class="container-fluid" style="padding:5px 5px 15px 25px;background-color:#f1f1f1;">
+						<div class="row" style="padding-bottom: 20px;">
+							<div class="col-md" style="text-align: left;"><h5>Example #3</h5>Invoke <a href="https://docs.newrelic.com/docs/browser/new-relic-browser/browser-apis/noticeerror/" target=_blank>noticeError()</a></div>
+						</div>
+						<div class="row">
+							<div class="col-md"><button  style="width:175px;" class="btn btn-primary" onclick="capture_native_error();">Invoke noticeError()</button></div>
+						</div>
+					</div>
+					<!--end Example #3-->
+					<p></p>
+					<!--Example #4-->
+					<div class="container-fluid" style="padding:5px 5px 15px 25px;background-color:#ffffff;">
+						<div class="row" style="padding-bottom: 20px;">
+							<div class="col-md" style="text-align: left;"><h5>Example #4</h5>Log native <b>console INFO Log</b> (<a href="https://docs.newrelic.com/docs/browser/new-relic-browser/browser-apis/wraplogger/" target=_blank>wrapLogger()</a>)</div>
+						</div>
+						<div class="row">
+							<div class="col-md"><button  style="width:175px;" class="btn btn-primary" onclick="invoke_console_log();">Write to console.info()</button></div>
+						</div>
+					</div>
+					<!--end Example #4-->
+					<p></p>
+					<!--Example #5-->
+					<div class="container-fluid" style="padding:5px 5px 15px 25px;background-color:#f1f1f1;">
+						<div class="row" style="padding-bottom: 20px;">
+							<div class="col-md" style="text-align: left;"><h5>Example #5</h5>AJAX call; <a target=_blank href="https://docs.newrelic.com/docs/browser/new-relic-browser/browser-apis/log/">.log()</a> result</div>
+						</div>
+						<div class="row">
+							<div class="col-md"><button  style="width:175px;" class="btn btn-primary" onclick="loadDoc();">Make Ajax Call</button></div>
+						</div>
+					</div>
+					<!--end Example #5-->
+		        </div>
+		        <div class="col-lg-9">
+		        	<!--local logger for results from page actions/buttons for invoking the NR Browser agent/logs, etc.-->
+					<div class="container-fluid" style="padding-top:10px;">
+						<div class="row">
+								<div class="container-fluid">
+									<div class="row">
+								       <div class="col-lg-6" style="padding-top:5px;text-align: left;">
+										<b>Local Logger</b>
+										</div>
+										<div class="col-lg-6" style="padding-bottom:10px;padding-right:-50px;text-align: right;">
+											<button style="width:175px;" class="btn btn-warning" onclick="local_logger_clear();">Clear Logger</button>
+										</div>
+									</div>
+									<div class="row">
+									    <div class="col-lg-12">
+								      		<textarea style="font-family:'Courier New';color:#ffffff;background-color:#2a363c;width:100%;height:720px;" id="logger"></textarea>
+								      	</div>
+								    </div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--end local logger-->
+		        </div>
+		    </div>
+		</div>
+	</div>	
+	<br><br><br>
+</body></html>
