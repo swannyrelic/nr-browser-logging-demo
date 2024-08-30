@@ -1,6 +1,8 @@
 ## New Relic Browser Agent Demo Screenshot
 ![New Relic Browser Agent Logging Demo](/screenshot-min.png?raw=true "Optional Title")
 
+This Browser logging demo focuses on several aspects of the New Relic Browser Agent: `Native Error collection`, `noticeError() collection`, `Browser Console Log collection`, `.log() collection`
+
 # Local Dev Environment
 
 ## Pre-Reqs
