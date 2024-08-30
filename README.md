@@ -15,6 +15,7 @@
  4. To customize the header and UI for the demo, replace the `header-min.png` (800px x 200px) with a file of your choice
  5. Edit the `local config options` in the `index.html` file
  6. Load `index.html` locally from your web server and interact; `Browser` and `Log` telemetry will be sent to New Relic
+ 7. Navigate to the `Browser Application` you created in New Relic (step 2) and browse the Log telemetry from the Demo
 
 ## Include Files
 
