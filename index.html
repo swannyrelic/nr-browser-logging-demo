@@ -293,7 +293,24 @@
 	//	END Example #5
 	////////////////////////////////////////////////////////////////
 	
+	////////////////////////////////////////////////////////////////
+	//
+	//	Example 6 - Capture Page Action into the PageAction EventType
+	//	Doc Link: https://docs.newrelic.com/docs/browser/new-relic-browser/browser-apis/addpageaction/
+	//
 
+  	function capturePageAction(pageID,message_local_logger)
+  	{
+  		newrelic.addPageAction(pageID);
+  		var logger_box = $("#logger");
+		local_logger(config_ca_level_info, logger_box, message_local_logger);
+  	}
+
+  	//
+	//	END Example #6
+	////////////////////////////////////////////////////////////////
+
+	
 	////////////////////////////////////////////////////////////////
 	//	Page Analytics Demo 
 	//	
@@ -475,6 +492,16 @@
 						</div>
 					</div>
 					<!--end Example #5-->
+					<!--Example #6-->
+					<div class="container-fluid" style="padding:5px 5px 15px 25px;background-color:#f1f1f1;">
+						<div class="row" style="padding-bottom: 20px;">
+							<div class="col-md" style="text-align: left;"><h5>Example #6</h5>Capture Page Action; <a target=_blank href="https://docs.newrelic.com/docs/browser/new-relic-browser/browser-apis/addpageaction/">.addPageAction()</a> result</div>
+						</div>
+						<div class="row">
+							<div class="col-md"><button id="page-action-example" style="width:175px;" class="btn btn-primary" onclick="capturePageAction('/page-action-example','[page-action-example] div id clicked, capturing to PageAction event type');">Capture Page Action</button></div>
+						</div>
+					</div>
+					<!--end Example #6-->
 		        </div>
 		        <div class="col-lg-9">
 		        	<!--local logger for results from page actions/buttons for invoking the NR Browser agent/logs, etc.-->
